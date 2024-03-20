@@ -93,10 +93,3 @@ npm publish
 4. After publishing, you can check your package on npmjs.com. Log in to your npm account on the website and navigate to your profile. Click on the "Packages" dropdown to view your published package. You can click on your package to see its details.
 
 That's it! Your package is now published on npm and can be installed and used by others.
-
-## My other repositories for node_projects and other assignments are as follows:
-
-1. [Node projects](https://github.com/ahmedjawad1857/node_projects)
-2. [TypeScript assignments](https://github.com/ahmedjawad1857/ts-assignments)
-
-Thanks for seeing myrepositories.
