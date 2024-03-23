@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 import inquirer from "inquirer";
 const randomNumber = Math.floor(Math.random() * 100 + 1);
-let roundsPlayed = 10;
+let roundsPlayed = 5;
 console.log(`Welcome to Guess the number Game.`);
 console.log(`Here I think the number between 1 and 100 in ${roundsPlayed} rounds.`);
 async function askToGuess() {
@@ -11,21 +11,11 @@ async function askToGuess() {
                 type: "number",
                 name: "guess",
                 message: `Guess a number between 1 and 100 in ${roundsPlayed} rounds ->`,
-                validate: (input) => {
-                    const num = parseFloat(input);
-                    if (isNaN(num) || num < 1 || num > 100) {
-                        console.log("Please enter a valid number between 1 to 100.");
-                        return false;
-                    }
-                    return true;
-                },
             },
         ]);
         const guess = parseFloat(answer.guess);
-        if (!isNaN(guess)) {
-            roundsPlayed--;
-            checkGuess(guess);
-        }
+        roundsPlayed--;
+        checkGuess(guess);
     }
     else {
         console.log("You lost the number is ", randomNumber);
@@ -34,7 +24,7 @@ async function askToGuess() {
 }
 function checkGuess(guess) {
     if (guess === randomNumber) {
-        console.log("Congrats! the secret number is ", guess, " You got it in ", 10 - roundsPlayed, " rounds.");
+        console.log("Congrats! the secret number is ", guess, " You got it in ", 5 - roundsPlayed, " rounds.");
         process.exit(0);
     }
     else if (guess < randomNumber) {
